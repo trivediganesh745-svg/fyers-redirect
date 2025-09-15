@@ -1,92 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Fyers OAuth Redirect</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #333;
-    }
-    .container {
-      text-align: center;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 500px;
-      width: 90%;
-    }
-    code {
-      background: #eee;
-      padding: 5px 10px;
-      border-radius: 6px;
-      display: inline-block;
-      margin: 10px 0;
-      font-family: monospace;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #0066ff;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #004ecc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Page</title>
 </head>
 <body>
-  <div class="container">
-    <h2>Fyers OAuth Redirect</h2>
-    <p id="status">Processing login...</p>
-    <p id="authCodeContainer" style="display:none;">
-      Your <b>Auth Code</b> is: <br>
-      <code id="authCode"></code>
-    </p>
-    <button id="copyBtn" style="display:none;">Copy Auth Code</button>
-  </div>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const authCode = params.get("auth_code");
-    const status = document.getElementById("status");
-    const container = document.getElementById("authCodeContainer");
-    const codeElem = document.getElementById("authCode");
-    const copyBtn = document.getElementById("copyBtn");
-
-    if (authCode) {
-      status.innerText = "Login Successful!";
-      container.style.display = "block";
-      codeElem.innerText = authCode;
-      copyBtn.style.display = "inline-block";
-
-      copyBtn.addEventListener("click", () => {
-        navigator.clipboard.writeText(authCode).then(() => {
-          copyBtn.innerText = "Copied!";
-        });
-      });
-
-      // OPTIONAL: auto send authCode to your backend
-      /*
-      fetch("https://your-backend.com/api/save-auth", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ authCode })
-      });
-      */
-    } else {
-      status.innerText = "No Auth Code found. Please retry login.";
-    }
-  </script>
+    <h1>Hello from GitHub Pages!</h1>
+    <p>If you see this, your site is working 🎉</p>
 </body>
 </html>
